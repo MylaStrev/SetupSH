@@ -24,6 +24,17 @@ SNAP_PACKAGES=(
 SNAP_CLASSIC_PACKAGES=(
 "obsidian"
 )
+
+# check for and delete nosnap.pref in mint
+if test -f "/etc/apt/preferemces.d/nosnap.pref"; then
+    echo "## file found"
+    sudo rm "/etc/apt/preferences.d/nosnap.pref";
+    echo "## file removed"
+else
+    echo "## file not found"
+fi
+
+
 # check for and install snap
 echo "## CHECKING FOR SNAP"
 for pkg in "${NEEDED_PACKAGES[@]}"; do
