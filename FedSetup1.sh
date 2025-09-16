@@ -37,9 +37,6 @@ for pkg in "${FLATPAK_PLACKAGES[@]}"; do
 done
 
 #update code
-ehco "## CHECKING FOR AND UPDATING FLATPAK PAKGES UPDATES"
-sudo flatpak-update -y
-
 echo "## CHECKING FOR AND INSTALLING DNF PACKAGE UPDATES"
 sudo dnf update && sudo dnf upgrade -y
 
