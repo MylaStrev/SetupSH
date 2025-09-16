@@ -26,7 +26,7 @@ SNAP_CLASSIC_PACKAGES=(
 )
 
 # check for and delete nosnap.pref in mint
-if test -f "/etc/apt/preferemces.d/nosnap.pref"; then
+if test -f "/etc/apt/preferences.d/nosnap.pref"; then
     echo "## file found"
     sudo rm "/etc/apt/preferences.d/nosnap.pref";
     echo "## file removed"
