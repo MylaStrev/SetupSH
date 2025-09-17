@@ -16,6 +16,12 @@ FLATPAK_PAKAGES=(
 
 
 #install code
+echo "## checking for and getting flathub repo..."
+if ! flatpak remote-list | grep -q flathub; then
+    echo "## Adding Flathub remote..."
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+fi
+
 echo "## INSTALLING DNF PACKAGES"
 for pkg in "${DNF_PACKAGES[@]}"; do
     if rpm -q "$pkg" &> /dev/null; then
