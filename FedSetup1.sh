@@ -9,11 +9,13 @@ DNF_PACKAGES=(
 )
 
 FLATPAK_PAKAGES=(
-"com.spotify.client"
 "com.valvesoftware.Steam"
 "md.obsidian.Obsidian"
 )
 
+FLATHUB_PACKAGE=(
+"com.spotify.client"
+)
 
 #install code
 echo "## checking for and getting flathub repo..."
@@ -39,6 +41,16 @@ for pkg in "${FLATPAK_PLACKAGES[@]}"; do
     else 
         echo "## installing $pkg..."
         sudo dnf install -y "$pkg"
+    fi
+done
+
+echo "## INSTALLING FLATHUB PACKAGES"
+for pkg in "${FLATHUB_PLACKAGES[@]}"; do
+    if rpm -q "$pkg" &> /dev/null; then
+        echo "## $pkg is already installed, skipping..."
+    else 
+        echo "## installing $pkg..."
+        sudo flatpak install -y flathub "$pkg"
     fi
 done
 
