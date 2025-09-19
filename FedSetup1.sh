@@ -17,13 +17,14 @@ FLATHUB_PACKAGE=(
 "com.spotify.client"
 )
 
-#install code
+#install flathub repo
 echo "## checking for and getting flathub repo..."
 if ! flatpak remote-list | grep -q flathub; then
     echo "## Adding Flathub remote..."
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 fi
 
+#install package code
 echo "## INSTALLING DNF PACKAGES"
 for pkg in "${DNF_PACKAGES[@]}"; do
     if rpm -q "$pkg" &> /dev/null; then
