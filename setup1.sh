@@ -13,7 +13,6 @@ APT_PACKAGES=(
 "obs-studio"
 "freecad"
 "git"
-
 )
 
 SNAP_PACKAGES=(
@@ -34,7 +33,6 @@ else
     echo "## file not found"
 fi
 
-
 # check for and install snap
 echo "## CHECKING FOR SNAP"
 for pkg in "${NEEDED_PACKAGES[@]}"; do
@@ -45,7 +43,6 @@ for pkg in "${NEEDED_PACKAGES[@]}"; do
         sudo apt install -y "$pkg"
     fi
 done
-
 
 #install code
 echo "## INSTALLING APT PACKAGES"
@@ -76,7 +73,6 @@ for pkg in "${SNAP_CLASSIC_PACKAGES[@]}"; do
         sudo snap install "$pkg" --classic
     fi
 done
-
 
 #update code
 echo "## CHECKING FOR AND INSTALLING APT PACKAGE UPDATES"
