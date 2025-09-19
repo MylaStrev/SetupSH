@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # additional needed packages
 NEEDED_PACKAGES=(
 "snapd"
