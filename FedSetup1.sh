@@ -15,6 +15,7 @@ FLATPAK_PAKAGES=(
 
 FLATHUB_PACKAGE=(
 "com.spotify.client"
+"com.discordapp.Discord"
 )
 
 #install flathub repo
