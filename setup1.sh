@@ -12,6 +12,7 @@ APT_PACKAGES=(
 "obs-studio"
 "freecad"
 "git"
+"blender"
 )
 
 SNAP_PACKAGES=(
