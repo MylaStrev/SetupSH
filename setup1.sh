@@ -9,6 +9,7 @@ NEEDED_PACKAGES=(
 
 # list apps here
 APT_PACKAGES=(
+"sl"
 "fastfetch"
 "vlc"
 "obs-studio"
